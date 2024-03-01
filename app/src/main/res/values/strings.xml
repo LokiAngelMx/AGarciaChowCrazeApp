@@ -8,4 +8,5 @@
     <string name="success_order">Compra exitosa</string>
     <string name="sucess_order_text">Tu hamburguesa doble con queso ha sido comprada correctamente</string>
     <string name="rating">4,5</string>
+    <string name="welcome_title">Hola Juan</string>
 </resources>
