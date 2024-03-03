@@ -28,12 +28,13 @@
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toEndOf="@id/guideV1"
             app:layout_constraintEnd_toStartOf="@id/guideV2"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/categoryTitle"
             android:gravity="center_vertical">
 
             <ImageView
@@ -57,8 +58,71 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/baseline_account_circle_24"
+                android:src="@drawable/baseline_exit_to_app_24"
                 app:tint="@color/tomatoRed" />
         </LinearLayout>
+        
+        <TextView
+            android:id="@+id/categoryTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/category_title"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintStart_toEndOf="@id/guideV1"
+            app:layout_constraintEnd_toStartOf="@+id/guideV2"
+            app:layout_constraintBottom_toTopOf="@+id/categoryRecyclerView"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoryRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/guideV1"
+            app:layout_constraintEnd_toStartOf="@id/guideV2"
+            app:layout_constraintTop_toBottomOf="@id/categoryTitle"
+            app:layout_constraintBottom_toTopOf="@id/restaurantTitle" />
+
+        <TextView
+            android:id="@+id/restaurantTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/restaurant_title"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@id/guideV1"
+            app:layout_constraintEnd_toStartOf="@id/guideV2"
+            app:layout_constraintTop_toBottomOf="@id/categoryRecyclerView"
+            android:textStyle="bold"
+            android:textSize="24sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/restaurantRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/restaurantTitle"
+            app:layout_constraintStart_toEndOf="@id/guideV1"
+            app:layout_constraintEnd_toStartOf="@id/guideV2"
+            app:layout_constraintBottom_toTopOf="@id/bestFoods" />
+
+        <TextView
+            android:id="@+id/bestFoods"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/best_foods"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@id/guideV1"
+            app:layout_constraintEnd_toStartOf="@id/guideV2"
+            app:layout_constraintTop_toBottomOf="@id/restaurantRecyclerView"
+            android:textStyle="bold"
+            android:textSize="24sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/foodRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/bestFoods"
+            app:layout_constraintStart_toEndOf="@id/guideV1"
+            app:layout_constraintEnd_toStartOf="@id/guideV2"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
